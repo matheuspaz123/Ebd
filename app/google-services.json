@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "536406704290",
+    "project_id": "escoladominical-10159",
+    "storage_bucket": "escoladominical-10159.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:536406704290:android:b346771d3182e36d7557fb",
+        "android_client_info": {
+          "package_name": "com.example.ebd"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "536406704290-t0a1j0at5llkavvlpbt0ap8ig3bhhmf7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4EjsqPZ2rWwIyZu-hlHQlmCjzUcN74hI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "536406704290-t0a1j0at5llkavvlpbt0ap8ig3bhhmf7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
