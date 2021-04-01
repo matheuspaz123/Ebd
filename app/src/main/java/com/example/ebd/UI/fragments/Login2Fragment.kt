@@ -1,4 +1,4 @@
-package com.example.ebd
+package com.example.ebd.UI.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,8 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.example.ebd.R
 import com.example.ebd.databinding.FragmentLogin2Binding
-import com.example.ebd.model.User
 
 
 class Login2Fragment : Fragment() {

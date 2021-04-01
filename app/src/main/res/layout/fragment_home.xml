@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeFragment">
+    tools:context=".UI.fragments.HomeFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -16,10 +16,11 @@
 
 
             <com.google.android.material.card.MaterialCardView
+                android:id="@+id/home_cv_image"
                 android:layout_width="@dimen/_64sdp"
                 android:layout_height="@dimen/_64sdp"
-                android:backgroundTint="#B8FFC7"
                 android:layout_margin="@dimen/_8sdp"
+                android:backgroundTint="#B8FFC7"
                 app:cardCornerRadius="@dimen/_32sdp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -30,6 +31,76 @@
                     app:srcCompat="@drawable/image_dengo" />
 
             </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/home_tv_welcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_16sdp"
+                android:text="Bem-vinda"
+                android:textSize="@dimen/_16ssp"
+                android:textStyle="italic"
+                app:layout_constraintLeft_toRightOf="@+id/home_cv_image"
+                app:layout_constraintTop_toTopOf="@+id/home_cv_image" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_16sdp"
+                android:text="Crislayne"
+                android:textSize="@dimen/_20ssp"
+                android:textStyle="italic|bold"
+                app:layout_constraintLeft_toRightOf="@+id/home_cv_image"
+                app:layout_constraintTop_toBottomOf="@+id/home_tv_welcome" />
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_24sdp"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/home_cv_image">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/cardbackground"
+                        android:clickable="true"
+                        app:cardCornerRadius="@dimen/_16sdp"
+                        app:cardElevation="@dimen/_6sdp"
+                        app:cardUseCompatPadding="true">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="@dimen/_24sdp">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:hint="Total: 0" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Matricular" />
+                        </LinearLayout>
+
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+
+
+            </androidx.core.widget.NestedScrollView>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
