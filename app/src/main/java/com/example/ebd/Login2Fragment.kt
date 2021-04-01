@@ -41,7 +41,6 @@ class Login2Fragment : Fragment() {
              findNavController().navigate(R.id.action_login2Fragment_to_homeFragment)
         }
 
-        
     }
 
 
