@@ -2,14 +2,11 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/white"
     tools:context=".Login2Fragment">
 
     <data>
 
-        <variable
-            name="user"
-            type="com.example.ebd.model.User" />
+
     </data>
 
     <ScrollView
@@ -38,7 +35,6 @@
                 android:layout_marginHorizontal="@dimen/_16sdp"
                 android:layout_marginTop="@dimen/_16sdp"
                 android:hint="Usuario"
-                android:text="@={user.usuario}"
                 android:textColor="@color/black"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/login_image" />
@@ -50,11 +46,11 @@
                 android:layout_marginHorizontal="@dimen/_16sdp"
                 android:hint="Senha"
                 android:layout_marginTop="@dimen/_8sdp"
-                android:text="@{user.senha}"
                 android:textColor="@color/black"
                 app:layout_constraintTop_toBottomOf="@+id/login_et_usuario" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/login_bt"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/_16sdp"
