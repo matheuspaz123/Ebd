@@ -39,10 +39,18 @@ android {
     buildFeatures {
         dataBinding true
     }
+
+    //maven para MPAndroidgraph
+    repositories {
+        maven { url 'https://jitpack.io' }
+    }
 }
 
 dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    //Biblioteca para gerar graficos
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 
 
     //biblioteca databinding
