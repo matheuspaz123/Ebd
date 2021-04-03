@@ -35,6 +35,7 @@
 
                 </com.google.android.material.card.MaterialCardView>
 
+                <!-- Barra de perfil -->
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/home_tv_welcome"
                     android:layout_width="wrap_content"
@@ -46,6 +47,7 @@
                     app:layout_constraintLeft_toRightOf="@+id/home_cv_image"
                     app:layout_constraintTop_toTopOf="@+id/home_cv_image" />
 
+                <!-- Barra de perfil -->
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -178,10 +180,11 @@
 
                 <!-- Grafico -->
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/home_cv_grafico"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:cardCornerRadius="@dimen/_16sdp"
                     android:backgroundTint="@color/grafico_forte"
+                    app:cardCornerRadius="@dimen/_16sdp"
                     app:cardElevation="@dimen/_2sdp"
                     app:cardUseCompatPadding="true"
                     app:layout_constraintLeft_toLeftOf="parent"
@@ -191,18 +194,175 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/home_tv_tri1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1º trimestre"
+                            android:textColor="@color/white"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toLeftOf="@+id/home_tv_tri2"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/home_tv_tri2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2º trimestre"
+                            android:textColor="@color/white"
+                            app:layout_constraintLeft_toRightOf="@+id/home_tv_tri1"
+                            app:layout_constraintRight_toLeftOf="@+id/home_tv_tri3"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/home_tv_tri3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="3º trimestre"
+                            android:textColor="@color/white"
+                            app:layout_constraintLeft_toRightOf="@+id/home_tv_tri2"
+                            app:layout_constraintRight_toLeftOf="@+id/home_tv_tri4"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/home_tv_tri4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="4º trimestre"
+                            android:textColor="@color/white"
+                            app:layout_constraintLeft_toRightOf="@+id/home_tv_tri3"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
                         <com.github.mikephil.charting.charts.BarChart
                             android:id="@+id/home_grafico"
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/_256sdp"
                             app:layout_constraintLeft_toLeftOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            />
+                            app:layout_constraintTop_toTopOf="parent" />
 
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                 </com.google.android.material.card.MaterialCardView>
+
+                <!-- Barra de fechamentos e resumos -->
+                <HorizontalScrollView
+                    android:id="@+id/home_horizontal_barra2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:scrollbars="none"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/home_cv_grafico">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <!-- Cardview para matricula de alunos -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/home_cv_resumo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/cardbackground"
+                            android:clickable="true"
+                            app:cardCornerRadius="@dimen/_16sdp"
+                            app:cardElevation="@dimen/_6sdp"
+                            app:cardUseCompatPadding="true">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="@dimen/_24sdp">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    />
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:hint="Resumo" />
+
+                            </LinearLayout>
+
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <!-- Cardview com lista de alunos -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/cardbackground"
+                            android:clickable="true"
+                            app:cardCornerRadius="@dimen/_16sdp"
+                            app:cardElevation="@dimen/_6sdp"
+                            app:cardUseCompatPadding="true">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="@dimen/_24sdp">
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:hint="Trimeste: 0" />
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="Lista alunos" />
+                            </LinearLayout>
+
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <!-- Cardview para Tesouraria -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/cardbackground"
+                            android:clickable="true"
+                            app:cardCornerRadius="@dimen/_16sdp"
+                            app:cardElevation="@dimen/_6sdp"
+                            app:cardUseCompatPadding="true">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="@dimen/_24sdp">
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:hint="Saldo: 0" />
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="Tesouraria" />
+                            </LinearLayout>
+
+
+                        </com.google.android.material.card.MaterialCardView>
+
+
+                    </LinearLayout>
+
+
+                </HorizontalScrollView>
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

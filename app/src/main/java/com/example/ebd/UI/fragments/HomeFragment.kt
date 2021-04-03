@@ -13,8 +13,8 @@ import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
+import com.github.mikephil.charting.utils.MPPointF
 
-val meses = ArrayList<String>()
 val dados = ArrayList<BarEntry>()
 
 
@@ -46,6 +46,7 @@ class HomeFragment : Fragment() {
         binding.homeGrafico.axisLeft.isEnabled = false
         binding.homeGrafico.xAxis.isEnabled = false
         binding.homeGrafico.axisRight.isEnabled = false
+        binding.homeGrafico.description.text = "2021"
         binding.homeGrafico.isDoubleTapToZoomEnabled = false
         binding.homeGrafico.animateY(2000)
         // Inflate the layout for this fragment
@@ -53,12 +54,6 @@ class HomeFragment : Fragment() {
     }
 
     fun dadosGrafico(){
-        //para titulo das colunas
-        meses.add("Janeiro")
-        meses.add("Fevereiro")
-        meses.add("Março")
-        meses.add("Abril")
-
         //dados das colunas    (coluna , dados)
         dados.add(BarEntry(0f, 5f))
         dados.add(BarEntry(1f, 8f))
