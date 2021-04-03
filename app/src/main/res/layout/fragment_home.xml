@@ -258,10 +258,10 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:paddingVertical="@dimen/_12sdp">
 
 
-                        <!-- Cardview para matricula de alunos -->
                         <com.google.android.material.card.MaterialCardView
                             android:id="@+id/home_cv_resumo"
                             android:layout_width="wrap_content"
@@ -276,12 +276,14 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:orientation="vertical"
-                                android:padding="@dimen/_24sdp">
+                                android:paddingHorizontal="@dimen/_30sdp"
+                                android:paddingVertical="@dimen/_12sdp">
 
                                 <androidx.appcompat.widget.AppCompatImageView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    />
+                                    android:layout_gravity="center"
+                                    app:srcCompat="@drawable/ic_relatorio" />
 
                                 <com.google.android.material.textview.MaterialTextView
                                     android:layout_width="wrap_content"
@@ -294,7 +296,6 @@
 
                         </com.google.android.material.card.MaterialCardView>
 
-                        <!-- Cardview com lista de alunos -->
                         <com.google.android.material.card.MaterialCardView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -308,25 +309,25 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:orientation="vertical"
-                                android:padding="@dimen/_24sdp">
+                                android:paddingHorizontal="@dimen/_20sdp"
+                                android:paddingVertical="@dimen/_12sdp">
 
-                                <com.google.android.material.textview.MaterialTextView
+                                <androidx.appcompat.widget.AppCompatImageView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
-                                    android:hint="Trimeste: 0" />
+                                    app:srcCompat="@drawable/ic_trofeu" />
 
                                 <com.google.android.material.textview.MaterialTextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:gravity="center"
-                                    android:text="Lista alunos" />
+                                    android:text="Ranking alunos" />
                             </LinearLayout>
 
 
                         </com.google.android.material.card.MaterialCardView>
 
-                        <!-- Cardview para Tesouraria -->
                         <com.google.android.material.card.MaterialCardView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -340,19 +341,20 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:orientation="vertical"
-                                android:padding="@dimen/_24sdp">
+                                android:paddingHorizontal="@dimen/_30sdp"
+                                android:paddingVertical="@dimen/_12sdp">>
 
-                                <com.google.android.material.textview.MaterialTextView
+                                <androidx.appcompat.widget.AppCompatImageView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
-                                    android:hint="Saldo: 0" />
+                                    app:srcCompat="@drawable/ic_banco" />
 
                                 <com.google.android.material.textview.MaterialTextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:gravity="center"
-                                    android:text="Tesouraria" />
+                                    android:text="Escolhendo" />
                             </LinearLayout>
 
 

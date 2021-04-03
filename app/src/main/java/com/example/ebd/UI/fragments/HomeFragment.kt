@@ -46,7 +46,7 @@ class HomeFragment : Fragment() {
         binding.homeGrafico.axisLeft.isEnabled = false
         binding.homeGrafico.xAxis.isEnabled = false
         binding.homeGrafico.axisRight.isEnabled = false
-        binding.homeGrafico.description.text = "2021"
+        binding.homeGrafico.description.text = "Ano: 2021"
         binding.homeGrafico.isDoubleTapToZoomEnabled = false
         binding.homeGrafico.animateY(2000)
         // Inflate the layout for this fragment

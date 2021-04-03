@@ -5,7 +5,9 @@ import android.view.LayoutInflater
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.navOptions
 import com.example.ebd.R
 import com.example.ebd.databinding.FragmentLogin2Binding
 
@@ -38,7 +40,13 @@ class Login2Fragment : Fragment() {
         binding = FragmentLogin2Binding.bind(view)
         //binding.user = userr
         binding.loginBt.setOnClickListener {
-             findNavController().navigate(R.id.action_login2Fragment_to_homeFragment)
+
+            //animação de transição
+            val navOptions = NavOptions.Builder()
+                .setEnterAnim(R.anim.slide_in_left)
+                .setExitAnim(R.anim.slide_out_left)
+                .build()
+             findNavController().navigate(R.id.action_login2Fragment_to_homeFragment, null, navOptions)
         }
 
     }
