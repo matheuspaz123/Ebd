@@ -17,5 +17,14 @@
         android:id="@+id/homeFragment"
         android:name="com.example.ebd.UI.fragments.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_matriculaFragment"
+            app:destination="@id/matriculaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/matriculaFragment"
+        android:name="com.example.ebd.MatriculaFragment"
+        android:label="fragment_matricula"
+        tools:layout="@layout/fragment_matricula" />
 </navigation>
