@@ -309,20 +309,22 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:orientation="vertical"
-                                android:paddingHorizontal="@dimen/_20sdp"
+                                android:paddingHorizontal="@dimen/_28sdp"
                                 android:paddingVertical="@dimen/_12sdp">
+
 
                                 <androidx.appcompat.widget.AppCompatImageView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
-                                    app:srcCompat="@drawable/ic_trofeu" />
+                                    app:srcCompat="@drawable/ic_chamada" />
 
                                 <com.google.android.material.textview.MaterialTextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:gravity="center"
-                                    android:text="Ranking alunos" />
+                                    android:text="Chamada" />
+
                             </LinearLayout>
 
 
@@ -341,20 +343,23 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:orientation="vertical"
-                                android:paddingHorizontal="@dimen/_30sdp"
-                                android:paddingVertical="@dimen/_12sdp">>
+                                android:paddingHorizontal="@dimen/_14sdp"
+                                android:paddingVertical="@dimen/_12sdp">
 
                                 <androidx.appcompat.widget.AppCompatImageView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
-                                    app:srcCompat="@drawable/ic_banco" />
+                                    app:srcCompat="@drawable/ic_trofeu" />
+
 
                                 <com.google.android.material.textview.MaterialTextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:gravity="center"
-                                    android:text="Escolhendo" />
+                                    android:text="Ranking alunos" />
+
+
                             </LinearLayout>
 
 

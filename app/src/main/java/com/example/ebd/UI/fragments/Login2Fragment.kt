@@ -9,8 +9,10 @@ import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.navOptions
 import com.example.ebd.R
+import com.example.ebd.databinding.FragmentHomeBinding
 import com.example.ebd.databinding.FragmentLogin2Binding
 
+private lateinit var binding: FragmentHomeBinding
 
 class Login2Fragment : Fragment() {
 
@@ -31,20 +33,23 @@ class Login2Fragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_login2, container, false)
+        val view = inflater.inflate(R.layout.fragment_login2, container, false)
+        binding = FragmentLogin2Binding.bind(view)
+
+
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         //val userr = User("matheus", "12345678")
-        binding = FragmentLogin2Binding.bind(view)
-        //binding.user = userr
+
         binding.loginBt.setOnClickListener {
 
             //animação de transição
             val navOptions = NavOptions.Builder()
                 .setEnterAnim(R.anim.slide_in_left)
-                .setExitAnim(R.anim.slide_out_left)
+                .setExitAnim(R.anim.slide_out_right)
                 .build()
              findNavController().navigate(R.id.action_login2Fragment_to_homeFragment, null, navOptions)
         }
