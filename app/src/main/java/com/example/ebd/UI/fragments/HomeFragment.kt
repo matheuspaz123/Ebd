@@ -20,6 +20,7 @@ import com.github.mikephil.charting.utils.MPPointF
 val dadosList = ArrayList<BarEntry>()
 
 
+
 class HomeFragment : Fragment() {
 
     lateinit var binding: FragmentHomeBinding
