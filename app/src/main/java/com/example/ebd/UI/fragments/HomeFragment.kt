@@ -53,7 +53,7 @@ class HomeFragment : Fragment() {
                 .setEnterAnim(R.anim.slide_in_left)
                 .setExitAnim(R.anim.slide_out_right)
                 .build()
-            findNavController().navigate(R.id.action_homeFragment_to_matriculaFragment, null, navOptions)
+            //findNavController().navigate(R.id.action_homeFragment_to_matriculaFragment, null, navOptions)
         }
     }
 
