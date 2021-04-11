@@ -75,7 +75,7 @@ class Login2Fragment : Fragment() {
             } else {
                 Toast.makeText(
                     context,
-                    "Usuario ou senha vazio",
+                    "Usuario e senha vazios",
                     Toast.LENGTH_SHORT
                 ).show()
             }
