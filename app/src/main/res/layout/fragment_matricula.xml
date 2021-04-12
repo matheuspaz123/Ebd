@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".UI.fragments.MatriculaFragment">
+
+    <LinearLayout
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_28sdp"
+        android:id="@+id/matricula_top_bar"
+        android:background="@drawable/shape_top_bar">
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/matricula_top_bar_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="@dimen/_24sdp"
+                android:text="Matricular aluno"
+                android:textAlignment="center"
+                android:textSize="@dimen/_26ssp"
+                android:textStyle="italic" />
+
+
+    </LinearLayout>
+
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:backgroundTint="#F1F0F0"
+        android:elevation="@dimen/_7sdp"
+        android:layout_marginTop="@dimen/_70sdp"
+        app:cardCornerRadius="@dimen/_16sdp"
+        app:cardUseCompatPadding="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/matricula_et_nome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:hint="Nome do aluno:"
+                android:paddingTop="@dimen/_8sdp"
+                app:layout_constraintTop_toTopOf="parent"/>
+            <EditText
+                android:id="@+id/matricula_et_"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:hint="Classe:"
+                android:paddingTop="@dimen/_8sdp"
+                app:layout_constraintTop_toBottomOf="@+id/matricula_et_nome"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
