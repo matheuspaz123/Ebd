@@ -1,4 +1,4 @@
-package com.example.ebd.UI.fragments
+package com.example.ebd.UI.view.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,16 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.NavOptions
-import androidx.navigation.fragment.findNavController
 import com.example.ebd.R
 import com.example.ebd.databinding.FragmentHomeBinding
-import com.github.mikephil.charting.components.Description
-import com.github.mikephil.charting.components.XAxis
 import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
-import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
-import com.github.mikephil.charting.utils.MPPointF
 
 val dadosList = ArrayList<BarEntry>()
 

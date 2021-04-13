@@ -44,10 +44,13 @@ android {
     repositories {
         maven { url 'https://jitpack.io' }
     }
+
+    repositories {
+        jcenter()
+    }
 }
 
 dependencies {
-    def lifecycle_version = "2.3.1"
 
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
@@ -77,8 +80,16 @@ dependencies {
     implementation 'com.google.android.material:material:1.3.0'
 
     // Lifecycle e viewmodel
+    def lifecycle_version = "2.3.1"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+
+    //Koin injeção de dependencias
+    def koin_version = '2.1.5'
+    implementation "org.koin:koin-android:$koin_version"
+    implementation "org.koin:koin-android-scope:$koin_version"
+    implementation "org.koin:koin-android-viewmodel:$koin_version"
+    implementation "org.koin:koin-android-ext:$koin_version"
 
     // bibliotecas padrões
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"

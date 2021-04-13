@@ -1,4 +1,4 @@
-package com.example.ebd.network
+package com.example.ebd.data.network
 
 import com.google.firebase.auth.FirebaseAuth
 

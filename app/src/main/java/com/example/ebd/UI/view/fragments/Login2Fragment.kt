@@ -1,4 +1,4 @@
-package com.example.ebd.UI.fragments
+package com.example.ebd.UI.view.fragments
 
 import android.app.Service
 import android.net.ConnectivityManager
@@ -9,25 +9,22 @@ import androidx.fragment.app.Fragment
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.activity.viewModels
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.navOptions
 import com.example.ebd.R
-import com.example.ebd.databinding.FragmentHomeBinding
 import com.example.ebd.databinding.FragmentLogin2Binding
-import com.example.ebd.viewmodel.MainViewModel
+import com.example.ebd.UI.viewmodel.MainViewModel
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.fragment_login2.view.*
+import org.koin.android.viewmodel.ext.android.viewModel
 
 
 class Login2Fragment : Fragment() {
 
     var connectivity: ConnectivityManager? = null
     var info: NetworkInfo? = null
-    private lateinit var mMainViewModel: MainViewModel
+    private val mMainViewModel: MainViewModel by viewModel()
     private lateinit var binding: FragmentLogin2Binding
     private lateinit var autentication: FirebaseAuth
 
@@ -45,7 +42,6 @@ class Login2Fragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_login2, container, false)
         binding = FragmentLogin2Binding.bind(view)
-        mMainViewModel = ViewModelProvider(this).get(MainViewModel::class.java)
 
         binding.loginBt.setOnClickListener {
             conection()

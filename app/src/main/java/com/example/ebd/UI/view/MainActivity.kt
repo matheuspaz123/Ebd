@@ -1,11 +1,9 @@
-package com.example.ebd.UI
+package com.example.ebd.UI.view
 
 import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.activity.viewModels
 import com.example.ebd.R
-import com.example.ebd.viewmodel.MainViewModel
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

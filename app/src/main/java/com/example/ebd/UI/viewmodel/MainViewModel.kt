@@ -1,7 +1,7 @@
-package com.example.ebd.viewmodel
+package com.example.ebd.UI.viewmodel
 
 import androidx.lifecycle.ViewModel
-import com.example.ebd.network.Repository
+import com.example.ebd.data.network.Repository
 
 
 class MainViewModel : ViewModel() {

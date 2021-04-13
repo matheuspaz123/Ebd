@@ -2,7 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".UI.fragments.HomeFragment">
+    tools:context=".UI.view.fragments.HomeFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,7 +15,6 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp">
-
 
                 <!-- Barra de perfil -->
                 <com.google.android.material.card.MaterialCardView
