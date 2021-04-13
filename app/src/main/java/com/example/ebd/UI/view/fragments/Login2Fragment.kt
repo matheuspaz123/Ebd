@@ -28,9 +28,6 @@ class Login2Fragment : Fragment() {
     var info: NetworkInfo? = null
     private val mMainViewModel: MainViewModel by viewModel()
     private lateinit var binding: FragmentLogin2Binding
-    private val autentication: Repository by inject()
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -63,6 +60,7 @@ class Login2Fragment : Fragment() {
         return binding.root
     }
 
+    //validando paremetros de entrada de login
     private fun login(email: String, senha: String) {
         if (conection()) {
 
@@ -89,6 +87,7 @@ class Login2Fragment : Fragment() {
         }
     }
 
+    //navegar para homeFragmento
     private fun transitionHome() {
         //animação de transição
         val navOptions = NavOptions.Builder()
@@ -102,6 +101,7 @@ class Login2Fragment : Fragment() {
         )
     }
 
+    //Checando se login e senha não são vazios
     private fun validation(email: String, senha: String) = email.isNotEmpty() && senha.isNotEmpty()
 
     //testando a conexão de internet
