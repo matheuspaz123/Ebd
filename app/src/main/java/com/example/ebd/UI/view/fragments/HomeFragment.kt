@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.NavOptions
+import androidx.navigation.fragment.findNavController
 import com.example.ebd.R
 import com.example.ebd.databinding.FragmentHomeBinding
 import com.github.mikephil.charting.data.BarData
@@ -48,7 +49,7 @@ class HomeFragment : Fragment() {
                 .setEnterAnim(R.anim.slide_in_left)
                 .setExitAnim(R.anim.slide_out_right)
                 .build()
-            //findNavController().navigate(R.id.action_homeFragment_to_matriculaFragment, null, navOptions)
+            findNavController().navigate(R.id.action_homeFragment_to_matriculaFragment, null, navOptions)
         }
     }
 
