@@ -108,6 +108,7 @@
 
                         <!-- Cardview com lista de alunos -->
                         <com.google.android.material.card.MaterialCardView
+                           android:id="@+id/home_cv_lista"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:backgroundTint="@color/cardbackground"

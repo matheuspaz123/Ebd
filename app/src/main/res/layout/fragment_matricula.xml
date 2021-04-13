@@ -9,98 +9,101 @@
 
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-        <LinearLayout
-            android:id="@+id/matricula_top_bar"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/shape_top_bar"
-            android:padding="@dimen/_28sdp"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_height="match_parent">
 
-
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/matricula_top_bar_tv"
+            <LinearLayout
+                android:id="@+id/matricula_top_bar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginHorizontal="@dimen/_24sdp"
-                android:background="@android:color/transparent"
-                android:text="Matricular aluno"
-                android:textAlignment="center"
-                android:textSize="@dimen/_26ssp"
-                android:textStyle="italic" />
+                android:background="@drawable/shape_top_bar"
+                android:padding="@dimen/_28sdp"
+                app:layout_constraintTop_toTopOf="parent">
 
 
-        </LinearLayout>
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/matricula_top_bar_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="@dimen/_24sdp"
+                    android:background="@android:color/transparent"
+                    android:text="Matricular aluno"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/_26ssp"
+                    android:textStyle="italic" />
 
 
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginTop="@dimen/_70sdp"
-            android:backgroundTint="#E4E4E4"
-            android:elevation="@dimen/_7sdp"
-            app:cardCornerRadius="@dimen/_16sdp"
-            app:cardUseCompatPadding="true"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            </LinearLayout>
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="@dimen/_480sdp"
+                android:layout_marginTop="@dimen/_70sdp"
+                android:backgroundTint="#E4E4E4"
+                android:elevation="@dimen/_7sdp"
+                app:cardCornerRadius="@dimen/_16sdp"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/matricula_iv_matricula"
-                    android:layout_width="@dimen/_320sdp"
-                    android:layout_height="@dimen/_160sdp"
-                    android:layout_marginTop="@dimen/_16sdp"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/illustration_matricula" />
-
-                <EditText
-                    android:id="@+id/matricula_et_nome"
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="@dimen/_16sdp"
-                    android:layout_marginTop="@dimen/_16sdp"
-                    android:hint="Nome do aluno:"
+                    android:layout_height="match_parent">
 
-                    app:layout_constraintTop_toBottomOf="@+id/matricula_iv_matricula" />
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/matricula_iv_matricula"
+                        android:layout_width="@dimen/_320sdp"
+                        android:layout_height="@dimen/_160sdp"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/illustration_matricula" />
 
-                <EditText
-                    android:id="@+id/matricula_et_classe"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="@dimen/_16sdp"
-                    android:layout_marginTop="@dimen/_16sdp"
-                    android:hint="Classe:"
-                    app:layout_constraintTop_toBottomOf="@+id/matricula_et_nome" />
+                    <EditText
+                        android:id="@+id/matricula_et_nome"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_16sdp"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:hint="Nome do aluno:"
 
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/matricula_bt_salvar"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="@dimen/_16sdp"
-                    android:layout_marginTop="@dimen/_32sdp"
-                    android:background="@drawable/button_login"
-                    android:text="Salvar"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/matricula_et_classe" />
+                        app:layout_constraintTop_toBottomOf="@+id/matricula_iv_matricula" />
+
+                    <EditText
+                        android:id="@+id/matricula_et_classe"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_16sdp"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:hint="Classe:"
+                        app:layout_constraintTop_toBottomOf="@+id/matricula_et_nome" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/matricula_bt_salvar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_16sdp"
+                        android:layout_marginTop="@dimen/_32sdp"
+                        android:background="@drawable/button_login"
+                        android:text="Salvar"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/matricula_et_classe" />
 
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </com.google.android.material.card.MaterialCardView>
+            </com.google.android.material.card.MaterialCardView>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-
+    </ScrollView>
 
 </layout>

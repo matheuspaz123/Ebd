@@ -21,11 +21,19 @@
         <action
             android:id="@+id/action_homeFragment_to_matriculaFragment"
             app:destination="@id/matriculaFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_listaAlunosFragment"
+            app:destination="@id/listaAlunosFragment" />
     </fragment>
     <fragment
         android:id="@+id/matriculaFragment"
         android:name="com.example.ebd.UI.view.fragments.MatriculaFragment"
         android:label="fragment_matricula"
         tools:layout="@layout/fragment_matricula" />
+    <fragment
+        android:id="@+id/listaAlunosFragment"
+        android:name="com.example.ebd.UI.view.fragments.ListaAlunosFragment"
+        android:label="fragment_lista_alunos"
+        tools:layout="@layout/fragment_lista_alunos" />
 
 </navigation>
