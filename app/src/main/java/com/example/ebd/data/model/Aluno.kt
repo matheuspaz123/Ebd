@@ -1,3 +1,4 @@
 package com.example.ebd.data.model
 
-class Aluno (var nome: String = "",var classe: String = "")
+
+data class Aluno(var nome: String = "", var classe: String = "", val presenca: String = "presenca")
