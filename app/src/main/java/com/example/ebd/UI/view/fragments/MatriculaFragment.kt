@@ -9,6 +9,7 @@ import android.widget.Toast
 import android.widget.ArrayAdapter
 import com.example.ebd.R
 import com.example.ebd.data.model.Aluno
+import com.example.ebd.data.model.Presenca
 import com.example.ebd.databinding.FragmentLogin2Binding
 import com.example.ebd.databinding.FragmentMatriculaBinding
 import com.google.firebase.database.FirebaseDatabase
@@ -31,6 +32,13 @@ class MatriculaFragment : Fragment() {
         "Novos convertidos"
     )
 
+    private var listaTrimestre = arrayOf(
+        "1º Trimestre",
+        "2º Trimestre",
+        "3º Trimestre",
+        "4º Trimestre"
+    )
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -50,19 +58,32 @@ class MatriculaFragment : Fragment() {
 
         binding = FragmentMatriculaBinding.bind(view)
 
-        var mArrayAdapter =
+        var mArrayAdapterClasse =
             ArrayAdapter(view.context, android.R.layout.simple_spinner_item, listaClasses)
         //mArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        view.matricula_sp_classe.adapter = mArrayAdapter
+        var mArrayAdapterTrimestre =
+            ArrayAdapter(view.context, android.R.layout.simple_spinner_item, listaTrimestre)
+        view.matricula_sp_classe.adapter = mArrayAdapterClasse
+        view.matricula_sp_trimestre.adapter = mArrayAdapterTrimestre
 
-        var aluno = Aluno("teste", "testeclasse")
+
+        var aluno = Aluno("teste", "testeclasse", Presenca("2021", "1"))
 
         binding.matriculaBtSalvar.setOnClickListener {
+            var aa: String = view.matricula_sp_classe.selectedItem.toString()
+            var trimestre: String = (view.matricula_sp_trimestre.selectedItemPosition + 1).toString()
+
+
             aluno = Aluno(
-                binding.matriculaEtNome.text.toString(),
-                "Jovens"
-                //binding.matriculaSpClasse.text.toString()
+                nome = binding.matriculaEtNome.text.toString(),
+                classe = aa,
+                presenca = Presenca(binding.matriculaEtAno.text.toString(), trimestre )
+
             )
+
+            val e = dataBase.child("alunos")
+                .child(aluno.nome)
+
 
             val reference = dataBase.child("alunos")
                 .child(aluno.nome)
@@ -82,6 +103,7 @@ class MatriculaFragment : Fragment() {
                         ).show()
                     }
                 }
+
 
 
             /*      db.collection("usuarios")
