@@ -1,4 +1,4 @@
 package com.example.ebd.data.model
 
-class Aluno(var nome: String = "", var classe: String = "", val presenca: Presenca = Presenca("", ""))
-class Presenca(var ano: String = "", var trimestre: String = "")
+class Aluno(var nome: String = "", var classe: String = "",var matriculado: Boolean = true, val presenca: Presenca = Presenca(""))
+class Presenca(var dia: String = "")

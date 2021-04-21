@@ -5,18 +5,36 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.ebd.R
 import com.example.ebd.UI.adapter.AdapterListaAluno
 import com.example.ebd.data.model.Aluno
-import com.example.ebd.data.model.ListaAlunoClasse
 import com.example.ebd.databinding.FragmentListaAlunosBinding
 import com.google.firebase.database.*
 import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.fragment_lista_alunos.view.*
+import kotlinx.android.synthetic.main.fragment_matricula.view.*
+import kotlinx.android.synthetic.main.fragment_matricula.view.matricula_sp_classe
 
 class ListaAlunosFragment : Fragment() {
+    private val aa = ArrayList<Aluno?>()
+    private var classes = ""
+    val key = ArrayList<String?>()
+    val keyBack = ArrayList<String?>()
+    private val alunoListBack = ArrayList<Aluno?>()
+    private var listaClasses = arrayOf(
+        "Todos",
+        "Jovens",
+        "Crianças",
+        "Adolecentes",
+        "Varões",
+        "Irmãs",
+        "Novos convertidos"
+    )
+    var list = ArrayList<Aluno?>()
 
     private lateinit var binding: FragmentListaAlunosBinding
     private val db = Firebase.firestore
@@ -30,13 +48,22 @@ class ListaAlunosFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentListaAlunosBinding.bind(
-            inflater.inflate(
-                R.layout.fragment_lista_alunos,
-                container,
-                false
-            )
+
+        val view = inflater.inflate(
+            R.layout.fragment_lista_alunos,
+            container,
+            false
         )
+        binding = FragmentListaAlunosBinding.bind(view)
+
+        var mArrayAdapterClasse =
+            ArrayAdapter(view.context, android.R.layout.simple_spinner_item, listaClasses)
+        view.lista_sp_classe.adapter = mArrayAdapterClasse
+        var spiner = view.lista_sp_classe
+
+
+
+
 
         val recyclerAlunoLista = binding.listaAlunosRecycler
         val adapter = AdapterListaAluno()
@@ -46,10 +73,8 @@ class ListaAlunosFragment : Fragment() {
         recyclerAlunoLista.layoutManager = linearManager
 
         val a = db.collection("usuarios")
-        val aa = ArrayList<Aluno?>()
         val dataBase = FirebaseDatabase.getInstance().reference
         val e = dataBase.child("alunos")
-        val key = ArrayList<String?>()
             e.addValueEventListener(object : ValueEventListener{
                 override fun onDataChange(snapshot: DataSnapshot) {
                     aa.clear()
@@ -58,13 +83,70 @@ class ListaAlunosFragment : Fragment() {
                         key.add(document.key)
                         aa.add(document.getValue(Aluno::class.java))
                     }
-                    adapter.setData(listAluno = aa, keyNo = key)
+                    if (classes != "Todos"){
+                        val aux = ArrayList<Aluno?>()
+                        val auxKey = ArrayList<String?>()
+                        for (i in 0..(aa.size -1)){
+                            for (j in 0..(alunoListBack.size -1)){
+                                if (aa[i]?.nome == alunoListBack[j]?.nome){
+                                    aux.add(alunoListBack[j])
+                                    auxKey.add(keyBack[j])
+                                }
+                            }
+                        }
+                        adapter.setData(aux, auxKey)
+                    }else{
+                        adapter.setData(aa, key)
+                    }
                 }
 
                 override fun onCancelled(error: DatabaseError) {
                 }
 
             })
+
+        spiner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                list.clear()
+                alunoListBack.clear()
+                keyBack.clear()
+                classes = listaClasses[position]
+                val keyA = ArrayList<String?>()
+
+
+                if (aa.size >= 1){
+                    if (listaClasses[0] == classes){
+                        list.addAll(aa)
+                        keyA.addAll(key)
+                    }else{
+
+                        for (i in 0..(aa.size -1)){
+                            if (aa[i]?.classe == classes){
+                                keyA.add(key[i])
+                                list.add(aa[i])
+
+                            }
+
+                    }
+
+                    }
+                    keyBack.addAll(keyA)
+                    alunoListBack.addAll(list)
+                    adapter.setData(list, keyA)
+
+                }
+
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+            }
+
+        }
 
 
 

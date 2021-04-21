@@ -14,15 +14,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <ImageView
+            android:id="@+id/recycler_iv_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_man"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginVertical="@dimen/_4sdp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
         <TextView
             android:id="@+id/recycler_tv_nome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/_16sdp"
             android:layout_marginVertical="@dimen/_4sdp"
-            android:drawableTop="@drawable/ic_man"
             android:hint="Crislayne"
-            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/recycler_iv_icon"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
@@ -30,11 +38,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginVertical="@dimen/_4sdp"
-            android:layout_marginHorizontal="@dimen/_16sdp"
-            android:drawableTop="@drawable/ic_class"
             android:hint="Classe"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintLeft_toRightOf="@+id/recycler_iv_icon"
+            app:layout_constraintTop_toBottomOf="@+id/recycler_tv_nome" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

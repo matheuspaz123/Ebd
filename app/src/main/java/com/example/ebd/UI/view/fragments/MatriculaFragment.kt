@@ -32,12 +32,6 @@ class MatriculaFragment : Fragment() {
         "Novos convertidos"
     )
 
-    private var listaTrimestre = arrayOf(
-        "1º Trimestre",
-        "2º Trimestre",
-        "3º Trimestre",
-        "4º Trimestre"
-    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,23 +55,19 @@ class MatriculaFragment : Fragment() {
         var mArrayAdapterClasse =
             ArrayAdapter(view.context, android.R.layout.simple_spinner_item, listaClasses)
         //mArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        var mArrayAdapterTrimestre =
-            ArrayAdapter(view.context, android.R.layout.simple_spinner_item, listaTrimestre)
         view.matricula_sp_classe.adapter = mArrayAdapterClasse
-        view.matricula_sp_trimestre.adapter = mArrayAdapterTrimestre
 
-
-        var aluno = Aluno("teste", "testeclasse", Presenca("2021", "1"))
 
         binding.matriculaBtSalvar.setOnClickListener {
             var aa: String = view.matricula_sp_classe.selectedItem.toString()
-            var trimestre: String = (view.matricula_sp_trimestre.selectedItemPosition + 1).toString()
+            val matriculado = true
 
 
-            aluno = Aluno(
+            var aluno = Aluno(
                 nome = binding.matriculaEtNome.text.toString(),
                 classe = aa,
-                presenca = Presenca(binding.matriculaEtAno.text.toString(), trimestre )
+                matriculado = true,
+                presenca = Presenca("dia")
 
             )
 

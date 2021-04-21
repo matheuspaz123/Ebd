@@ -23,12 +23,30 @@
             android:textSize="@dimen/_16ssp"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:id="@+id/lista_tv_classe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_8sdp"
+            android:text="Classe:"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lista_alunos_tv_titulo" />
+
+        <Spinner
+            android:id="@+id/lista_sp_classe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_16sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/lista_tv_classe"
+            app:layout_constraintLeft_toRightOf="@+id/lista_tv_classe"
+            app:layout_constraintTop_toTopOf="@+id/lista_tv_classe" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/lista_alunos_recycler"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:layout_constraintTop_toBottomOf="@+id/lista_alunos_tv_titulo"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lista_sp_classe" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

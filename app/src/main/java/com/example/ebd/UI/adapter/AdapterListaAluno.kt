@@ -35,9 +35,10 @@ class AdapterListaAluno : RecyclerView.Adapter<AdapterListaAluno.ListaAlunoViewH
         return alunoList.size
     }
 
-    override fun onBindViewHolder(holder: ListaAlunoViewHolder, position: Int) {
-        holder.itemView.recycler_tv_nome.text = alunoList[position]?.nome
-        holder.itemView.recycler_tv_classe.text = alunoList[position]?.classe
+    private fun bind(holder: ListaAlunoViewHolder, position: Int, list: ArrayList<Aluno?>) {
+
+        holder.itemView.recycler_tv_nome.text = list[position]?.nome
+        holder.itemView.recycler_tv_classe.text = list[position]?.classe
         holder.itemView.setOnLongClickListener {
             val dialog = AlertDialog.Builder(context)
             dialog.setTitle("Deseja deletar este aluno?")
@@ -57,6 +58,13 @@ class AdapterListaAluno : RecyclerView.Adapter<AdapterListaAluno.ListaAlunoViewH
 
             false
         }
+
+    }
+
+    override fun onBindViewHolder(holder: ListaAlunoViewHolder, position: Int) {
+
+
+        bind(holder, position, alunoList)
 
     }
 
