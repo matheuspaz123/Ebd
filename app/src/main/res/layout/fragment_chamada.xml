@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".UI.view.fragments.ChamadaFragment">
+
+    <data>
+
+    </data>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/chamada_top_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_top_bar"
+                android:orientation="vertical"
+                android:padding="@dimen/_28sdp"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/chamada_top_bar_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="@dimen/_24sdp"
+                    android:background="@android:color/transparent"
+                    android:text="Chamada das classes"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/_26ssp"
+                    android:textStyle="italic" />
+
+
+            </LinearLayout>
+
+            <Spinner
+                android:id="@+id/chamada_sp_classe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/lista_tv_classe"
+                app:layout_constraintLeft_toRightOf="@+id/lista_tv_classe"
+                app:layout_constraintTop_toTopOf="@+id/lista_tv_classe" />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </ScrollView>
+
+
+</layout>

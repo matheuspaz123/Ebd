@@ -24,6 +24,9 @@
         <action
             android:id="@+id/action_homeFragment_to_listaAlunosFragment"
             app:destination="@id/listaAlunosFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_chamadaFragment"
+            app:destination="@id/chamadaFragment" />
     </fragment>
     <fragment
         android:id="@+id/matriculaFragment"
@@ -35,5 +38,10 @@
         android:name="com.example.ebd.UI.view.fragments.ListaAlunosFragment"
         android:label="fragment_lista_alunos"
         tools:layout="@layout/fragment_lista_alunos" />
+    <fragment
+        android:id="@+id/chamadaFragment"
+        android:name="com.example.ebd.UI.view.fragments.ChamadaFragment"
+        android:label="fragment_chamada"
+        tools:layout="@layout/fragment_chamada" />
 
 </navigation>
