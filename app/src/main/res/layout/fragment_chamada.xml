@@ -41,19 +41,193 @@
 
             </LinearLayout>
 
-            <Spinner
-                android:id="@+id/chamada_sp_classe"
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/chamada_cv_crianca"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/_16sdp"
-                app:layout_constraintBottom_toBottomOf="@+id/lista_tv_classe"
-                app:layout_constraintLeft_toRightOf="@+id/lista_tv_classe"
-                app:layout_constraintTop_toTopOf="@+id/lista_tv_classe" />
+                android:layout_margin="@dimen/_16ssp"
+                android:backgroundTint="@android:color/transparent"
+                android:clickable="true"
+                app:cardCornerRadius="@dimen/_40sdp"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/chamada_cv_varoes"
+                app:layout_constraintTop_toBottomOf="@+id/chamada_top_bar">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/ic_relatorio2" />
+
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Crianças"
+                app:layout_constraintLeft_toLeftOf="@+id/chamada_cv_crianca"
+                app:layout_constraintRight_toRightOf="@+id/chamada_cv_crianca"
+                app:layout_constraintTop_toBottomOf="@+id/chamada_cv_crianca" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/chamada_cv_jovens"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16ssp"
+                android:backgroundTint="@android:color/transparent"
+                android:clickable="true"
+                app:cardCornerRadius="@dimen/_40ssp"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintRight_toLeftOf="@+id/chamada_cv_crianca"
+                app:layout_constraintLeft_toRightOf="@+id/chamada_cv_novos"
+                app:layout_constraintTop_toTopOf="@+id/chamada_cv_crianca">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/ic_relatorio2" />
+
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Jovens"
+                app:layout_constraintLeft_toLeftOf="@+id/chamada_cv_jovens"
+                app:layout_constraintRight_toRightOf="@+id/chamada_cv_jovens"
+                app:layout_constraintTop_toBottomOf="@+id/chamada_cv_jovens" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/chamada_cv_novos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16ssp"
+                android:backgroundTint="@android:color/transparent"
+                android:clickable="true"
+                app:cardCornerRadius="@dimen/_40ssp"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintLeft_toRightOf="@+id/chamada_cv_jovens"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/chamada_cv_crianca">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/ic_relatorio2" />
+
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Novos Convertidos"
+                app:layout_constraintLeft_toLeftOf="@+id/chamada_cv_novos"
+                app:layout_constraintRight_toRightOf="@+id/chamada_cv_novos"
+                app:layout_constraintTop_toBottomOf="@+id/chamada_cv_novos" />
+
+            <!-- ===================================================== -->
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/chamada_cv_adolecente"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_32ssp"
+                android:backgroundTint="@color/cardbackground"
+                android:clickable="true"
+                app:cardCornerRadius="@dimen/_40sdp"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/chamada_cv_varoes"
+                app:layout_constraintTop_toBottomOf="@+id/chamada_cv_crianca">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/ic_relatorio2" />
+
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Adolecentes"
+                app:layout_constraintLeft_toLeftOf="@+id/chamada_cv_adolecente"
+                app:layout_constraintRight_toRightOf="@+id/chamada_cv_adolecente"
+                app:layout_constraintTop_toBottomOf="@+id/chamada_cv_adolecente" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/chamada_cv_varoes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16ssp"
+                android:backgroundTint="@android:color/transparent"
+                android:clickable="true"
+                app:cardCornerRadius="@dimen/_40ssp"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintRight_toLeftOf="@+id/chamada_cv_adolecente"
+                app:layout_constraintLeft_toRightOf="@+id/chamada_cv_irma"
+                app:layout_constraintTop_toTopOf="@+id/chamada_cv_adolecente">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/ic_relatorio2" />
+
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Varões"
+                app:layout_constraintLeft_toLeftOf="@+id/chamada_cv_varoes"
+                app:layout_constraintRight_toRightOf="@+id/chamada_cv_varoes"
+                app:layout_constraintTop_toBottomOf="@+id/chamada_cv_varoes" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/chamada_cv_irma"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16ssp"
+                android:backgroundTint="@android:color/transparent"
+                android:clickable="true"
+                app:cardCornerRadius="@dimen/_40ssp"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintLeft_toRightOf="@+id/chamada_cv_varoes"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/chamada_cv_adolecente">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/ic_relatorio2" />
+
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Irmãs"
+                app:layout_constraintLeft_toLeftOf="@+id/chamada_cv_irma"
+                app:layout_constraintRight_toRightOf="@+id/chamada_cv_irma"
+                app:layout_constraintTop_toBottomOf="@+id/chamada_cv_irma" />
+
+
+
+
+
+
 
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 
     </ScrollView>

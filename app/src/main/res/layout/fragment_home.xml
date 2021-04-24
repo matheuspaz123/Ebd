@@ -276,6 +276,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:orientation="vertical"
+                                android:clickable="false"
                                 android:paddingHorizontal="@dimen/_30sdp"
                                 android:paddingVertical="@dimen/_12sdp">
 
@@ -283,10 +284,12 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
+                                    android:clickable="false"
                                     app:srcCompat="@drawable/ic_relatorio" />
 
                                 <com.google.android.material.textview.MaterialTextView
                                     android:layout_width="wrap_content"
+                                    android:clickable="false"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
                                     android:hint="Resumo" />
@@ -297,6 +300,7 @@
                         </com.google.android.material.card.MaterialCardView>
 
                         <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/home_cv_chamada"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:backgroundTint="@color/cardbackground"

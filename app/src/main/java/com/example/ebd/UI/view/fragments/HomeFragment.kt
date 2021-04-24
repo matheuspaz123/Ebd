@@ -44,6 +44,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
     private fun iniciarListeners() {
         binding.homeCvMatricular.setOnClickListener(this)
         binding.homeCvLista.setOnClickListener(this)
+        binding.homeCvChamada.setOnClickListener(this)
 
 
     }
@@ -97,6 +98,12 @@ class HomeFragment : Fragment(), View.OnClickListener {
 
             R.id.home_cv_lista -> findNavController().navigate(
                 R.id.action_homeFragment_to_listaAlunosFragment,
+                null,
+                navOptions
+            )
+
+            R.id.home_cv_chamada -> findNavController().navigate(
+                R.id.action_homeFragment_to_chamadaFragment,
                 null,
                 navOptions
             )
