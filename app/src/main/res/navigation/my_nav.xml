@@ -42,6 +42,15 @@
         android:id="@+id/chamadaFragment"
         android:name="com.example.ebd.UI.view.fragments.ChamadaFragment"
         android:label="fragment_chamada"
-        tools:layout="@layout/fragment_chamada" />
+        tools:layout="@layout/fragment_chamada" >
+        <action
+            android:id="@+id/action_chamadaFragment_to_chamadaClasseFragment"
+            app:destination="@id/chamadaClasseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chamadaClasseFragment"
+        android:name="com.example.ebd.UI.view.fragments.ChamadaClasseFragment"
+        android:label="fragment_chamada_classe"
+        tools:layout="@layout/fragment_chamada_classe" />
 
 </navigation>
