@@ -1,5 +1,6 @@
 package com.example.ebd.UI.viewmodel
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.ebd.data.model.Aluno
@@ -13,22 +14,26 @@ import org.koin.java.KoinJavaComponent.inject
 
 
 class MainViewModel : ViewModel() {
-    private val autentication:Repository by inject(Repository::class.java)
+    private val autentication: Repository by inject(Repository::class.java)
     private val dataBase = FirebaseDatabase.getInstance().reference
     private val mTotalClasses = MutableLiveData<List<Aluno?>>()
     private val key = ArrayList<String?>()
+    private val mkey = ArrayList<String?>()
+    private val totalClasses = ArrayList<Aluno?>()
+    private val mClasses = ArrayList<Aluno?>()
+
 
     init {
         iniciarRealTime()
     }
 
-    fun iniciarRealTime(){
+    fun iniciarRealTime() {
         val totalClassesDb = dataBase.child("alunos")
         totalClassesDb.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                val totalClasses = ArrayList<Aluno?>()
+                totalClasses.clear()
                 key.clear()
-                for (document in snapshot.children){
+                for (document in snapshot.children) {
                     key.add(document.key)
                     totalClasses.add(document.getValue(Aluno::class.java))
                 }
@@ -41,8 +46,18 @@ class MainViewModel : ViewModel() {
         })
     }
 
+    fun getAlunosClasse(classe: String) {
+        mClasses.clear()
+        mkey.clear()
+        for (i in 0..(totalClasses.size - 1)) {
+            if (totalClasses[i]?.classe == classe) {
+                mClasses.add(totalClasses[i])
+                mkey.add(key[i])
+            }
+        }
+    }
 
 
-    fun getAutentication():FirebaseAuth = autentication.instanciFireAunth()
+    fun getAutentication(): FirebaseAuth = autentication.instanciFireAunth()
 
 }
