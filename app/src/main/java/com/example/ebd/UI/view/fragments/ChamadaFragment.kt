@@ -44,7 +44,7 @@ class ChamadaFragment : Fragment() {
                 .setEnterAnim(R.anim.slide_in_left)
                 .setExitAnim(R.anim.slide_out_right)
                 .build()
-            mViewModel.classe.postValue(Constantes.CLASSESVETOR[0])
+            mViewModel.classe.postValue(Constantes.CLASSESVETOR[1])
 
             findNavController().navigate(R.id.action_chamadaFragment_to_chamadaClasseFragment, null, navOptions)
         }
