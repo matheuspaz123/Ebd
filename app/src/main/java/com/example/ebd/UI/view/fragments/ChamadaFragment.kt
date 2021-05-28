@@ -45,10 +45,7 @@ class ChamadaFragment : Fragment() {
                 .setExitAnim(R.anim.slide_out_right)
                 .build()
             mViewModel.classe.postValue(Constantes.CLASSESVETOR[0])
-            val aux = mViewModel.iniciarListAlunos()
-            mViewModel.listaAluno.postValue(aux)
-            val auxx = mViewModel.iniciarKeys()
-            mViewModel.keys.postValue(auxx)
+
             findNavController().navigate(R.id.action_chamadaFragment_to_chamadaClasseFragment, null, navOptions)
         }
 

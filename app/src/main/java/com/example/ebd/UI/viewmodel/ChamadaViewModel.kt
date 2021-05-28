@@ -16,8 +16,11 @@ class ChamadaViewModel : ViewModel() {
 
 
 
+    init {
+        iniciar()
+    }
 
-    fun iniciarListAlunos(): ArrayList<Aluno?> {
+    private fun iniciar() {
         val totalClassesDb = dataBase.child("alunos")
         var a = ArrayList<Aluno?>()
         totalClassesDb.addValueEventListener(object : ValueEventListener {
@@ -30,54 +33,14 @@ class ChamadaViewModel : ViewModel() {
                     totalClasses.add(document.getValue(Aluno::class.java))
                 }
                 a.addAll(totalClasses)
+                listaAluno.postValue(totalClasses)
+                keys.postValue(key)
             }
 
             override fun onCancelled(error: DatabaseError) {
             }
         })
 
-        return a
-    }
-    fun iniciarKeys(): ArrayList<String?> {
-        val totalClassesDb = dataBase.child("alunos")
-        var a = ArrayList<String?>()
-        totalClassesDb.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                val key = ArrayList<String?>()
-                val totalClasses = ArrayList<Aluno?>()
-
-                for (document in snapshot.children) {
-                    key.add(document.key)
-                    totalClasses.add(document.getValue(Aluno::class.java))
-                }
-                a.addAll(key)
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-            }
-        })
-
-        return a
-    }
-
-    fun getListSelectedClasse(): ArrayList<Aluno?> {
-        val a = classe.value
-        val aa = listaAluno.value
-        val t = utilFiltarClasses(a, aa as List<Aluno?>)
-        val f = a
-
-        return t
-    }
-
-    private fun utilFiltarClasses (classe : String?, listaAluno: List<Aluno?>) : ArrayList<Aluno?>{
-
-        val auxList = ArrayList<Aluno?>()
-        for (i in 0..listaAluno.size){
-            if (listaAluno[i]?.classe  == classe){
-                auxList.add(listaAluno[i])
-            }
-        }
-        return auxList
     }
 
 
