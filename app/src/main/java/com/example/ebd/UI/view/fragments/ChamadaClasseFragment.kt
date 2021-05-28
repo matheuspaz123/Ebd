@@ -40,6 +40,7 @@ class ChamadaClasseFragment : Fragment() {
         })
         mViewModel.listaAluno.observe(viewLifecycleOwner, Observer { itens ->
 
+
             val aux = itens.let {
                 utilFiltarClasses(classee, it)
             }
