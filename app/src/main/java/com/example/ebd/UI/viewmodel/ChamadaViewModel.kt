@@ -22,7 +22,6 @@ class ChamadaViewModel : ViewModel() {
 
     private fun iniciar() {
         val totalClassesDb = dataBase.child("alunos")
-        var a = ArrayList<Aluno?>()
         totalClassesDb.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 val key = ArrayList<String?>()
@@ -32,7 +31,6 @@ class ChamadaViewModel : ViewModel() {
                     key.add(document.key)
                     totalClasses.add(document.getValue(Aluno::class.java))
                 }
-                a.addAll(totalClasses)
                 listaAluno.postValue(totalClasses)
                 keys.postValue(key)
             }

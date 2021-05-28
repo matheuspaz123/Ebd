@@ -15,10 +15,10 @@ import com.example.ebd.databinding.FragmentChamadaBinding
 import kotlinx.android.synthetic.main.fragment_chamada.*
 
 
-class ChamadaFragment : Fragment() {
+class ChamadaFragment : Fragment(), View.OnClickListener {
 
-    lateinit var binding : FragmentChamadaBinding
-    lateinit var mViewModel : ChamadaViewModel
+    lateinit var binding: FragmentChamadaBinding
+    lateinit var mViewModel: ChamadaViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,7 +31,13 @@ class ChamadaFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentChamadaBinding.bind(inflater.inflate(R.layout.fragment_chamada, container, false))
+        binding = FragmentChamadaBinding.bind(
+            inflater.inflate(
+                R.layout.fragment_chamada,
+                container,
+                false
+            )
+        )
         // Inflate the layout for this fragment
         return binding.root
     }
@@ -39,16 +45,40 @@ class ChamadaFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         mViewModel = ViewModelProvider(requireActivity()).get(ChamadaViewModel::class.java)
-        chamada_cv_crianca.setOnClickListener {
-            val navOptions = NavOptions.Builder()
-                .setEnterAnim(R.anim.slide_in_left)
-                .setExitAnim(R.anim.slide_out_right)
-                .build()
-            mViewModel.classe.postValue(Constantes.CLASSESVETOR[1])
 
-            findNavController().navigate(R.id.action_chamadaFragment_to_chamadaClasseFragment, null, navOptions)
+        setListeners()
+
+    }
+
+    fun setListeners(){
+        chamada_cv_crianca.setOnClickListener(this)
+        chamada_cv_adolecente.setOnClickListener(this)
+        chamada_cv_irma.setOnClickListener(this)
+        chamada_cv_jovens.setOnClickListener(this)
+        chamada_cv_novos.setOnClickListener(this)
+        chamada_cv_varoes.setOnClickListener(this)
+    }
+
+    fun transition() {
+        findNavController().navigate(
+            R.id.action_chamadaFragment_to_chamadaClasseFragment,
+            null,
+            Constantes.TRANSITIONFRAG
+        )
+    }
+
+    override fun onClick(v: View?) {
+        when (v?.id) {
+            //Passa o nome da classe que irá ser feita a chamada para a variavel na viewmodel global
+            R.id.chamada_cv_jovens -> mViewModel.classe.postValue(Constantes.CLASSESVETOR[0])
+            R.id.chamada_cv_crianca -> mViewModel.classe.postValue(Constantes.CLASSESVETOR[1])
+            R.id.chamada_cv_adolecente -> mViewModel.classe.postValue(Constantes.CLASSESVETOR[2])
+            R.id.chamada_cv_varoes -> mViewModel.classe.postValue(Constantes.CLASSESVETOR[3])
+            R.id.chamada_cv_irma -> mViewModel.classe.postValue(Constantes.CLASSESVETOR[4])
+            R.id.chamada_cv_novos -> mViewModel.classe.postValue(Constantes.CLASSESVETOR[5])
         }
 
+        transition()
     }
 
 
